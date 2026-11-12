@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/rules/roteamento.md\"",
+            "statusMessage": "Carregando regras de roteamento (token-router)"
+          },
+          {"type":"command","shell":"bash","command":"python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/perfil-maquina.py\"","timeout":10}
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/atualizar-vinculados.py\" --hook",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "matcher": "billing_error|rate_limit",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/contingencia/contingencia-automatica.py\"",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}

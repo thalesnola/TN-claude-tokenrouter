@@ -1,0 +1,8 @@
+{
+  "name": "token-router",
+  "version": "2.2.0",
+  "description": "Hierarquia de comando com Claude e modelos locais: o Opus mais recente pensa e decide; Sonnet 5.5 comanda e confere; Qwen Code, DSH e OpenCode (Ollama, offline) trabalham. Exceção: o Gemini 4 Argon, só pelo plugin argon e nunca com dado de caso. Contingência automática no fim de crédito: claude-local no Ollama.",
+  "author": {
+    "name": "local-user"
+  }
+}

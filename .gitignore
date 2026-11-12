@@ -1,0 +1,7 @@
+# Saída do graphify (grafo, cache, HTML) — reconstruível com /graphify .
+graphify-out/
+
+# Projeto/memórias do Serena — locais da máquina, recriáveis com activate_project
+.serena/
+__pycache__/
+*.pyc

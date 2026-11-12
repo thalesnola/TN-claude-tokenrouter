@@ -1,0 +1,18 @@
+{
+  "name": "local-user-plugins",
+  "owner": {
+    "name": "local-user"
+  },
+  "plugins": [
+    {
+      "name": "token-router",
+      "source": "./",
+      "description": "Hierarquia de comando com Claude e modelos locais: o Opus mais recente pensa e decide; Sonnet 5.5 comanda e confere; Qwen Code, DSH e OpenCode (Ollama, offline) trabalham. Exceção: o Gemini 4 Argon, só pelo plugin argon e nunca com dado de caso. Contingência automática no fim de crédito: claude-local no Ollama."
+    },
+    {
+      "name": "argon",
+      "source": {"source": "github", "repo": "local-user/claude-argon"},
+      "description": "Gemini 4 Argon e o catálogo do agy dentro do Claude Code: contraprova, leitura que poupa contexto, pesquisa citada e delegação pela cota Google. Perfil isolado e porta de sigilo."
+    }
+  ]
+}
